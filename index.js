@@ -6,6 +6,25 @@ const converter = require('xml2js');
 const parseString = converter.parseString;
 const xml = require('xml');
 
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, OPTIONS, PUT, PATCH, DELETE'
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-Requested-With,content-type'
+  );
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+  // Pass to next layer of middleware
+  next();
+});
+
 app.listen(3000, () => {
   console.log('listening on port 3000');
 });
@@ -17,32 +36,22 @@ app.get('/collection', (req, res, next) => {
   res.send(xmlFile);
 });
 
-const newCamera = { brand: 'Ricoh', name: 'GR3', mp: '16' };
-// testing write xml
-// parseString(xmlFile, (err, res) => {
-//   if (err) console.log(err);
-
-//   const json = res;
-
-//   json.my_collection.cameras[0].camera.push(newCamera);
-//   json.my_collection.cameras[0].camera[0].name = 'bla';
-//   const cameras = json.my_collection.cameras[0].camera;
-//   console.log(cameras);
-
-//   fs.writeFile('newxml.xml', xml, (err, data) => {
-//     if (err) console.log(err);
-//     console.log('success writing data');
-//   });
-// });
+app.use(express.json());
 
 app.post('/addcamera', (req, res, next) => {
+  console.log('posting');
   // convert xmlFile to JSON
   parseString(xmlFile, (err, res) => {
     if (err) console.log(err);
 
     const json = res;
     // edit JSON
-    json.my_collection.cameras[0].camera.push(req.body);
+    console.log(req.body);
+
+    const camera = { ...req.body };
+    json.my_collection.cameras[0].camera.push(camera);
+
+    console.log(camera);
 
     // convert JSON to xml
     const builder = new converter.Builder();
