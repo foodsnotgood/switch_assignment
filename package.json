@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "my cameras api",
   "main": "index.js",
+  "engines": {
+    "node": "16.14"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
