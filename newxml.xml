@@ -3,7 +3,7 @@
   <cameras>
     <camera>
       <brand>Canon</brand>
-      <name>bla</name>
+      <name>80D</name>
       <sensor>APS-C</sensor>
       <mp>24.2</mp>
       <iso_min>100</iso_min>
@@ -27,9 +27,12 @@
       </lens>
     </camera>
     <camera>
-      <brand>Ricoh</brand>
-      <name>GR3</name>
-      <mp>16</mp>
+      <brand>Waarom</brand>
+      <name>luistert</name>
+      <sensor>jkljklj</sensor>
+      <iso>naar </iso>
+      <shutter>hihihihi</shutter>
+      <mount>hein</mount>
     </camera>
   </cameras>
   <lenses>
