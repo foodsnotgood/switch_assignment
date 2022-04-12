@@ -3,21 +3,30 @@ const app = express();
 const fs = require('fs');
 const converter = require('xml2js');
 const xmlFile = fs.readFileSync('cameras.xml', 'utf-8');
+const cors = require('cors');
 
-// allow cross origin access
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, OPTIONS, PUT, PATCH, DELETE'
-  );
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-Requested-With,content-type'
-  );
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
+app.options('*', cors());
+
+// // allow cross origin access
+// app.use(function (req, res, next) {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader(
+//     'Access-Control-Allow-Methods',
+//     'GET, POST, OPTIONS, PUT, PATCH, DELETE'
+//   );
+//   res.setHeader(
+//     'Access-Control-Allow-Headers',
+//     'X-Requested-With,content-type'
+//   );
+//   res.setHeader('Access-Control-Allow-Credentials', true);
+//   next();
+// });
 
 app.use(express.json());
 
