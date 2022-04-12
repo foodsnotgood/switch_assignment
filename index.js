@@ -56,3 +56,5 @@ app.get('/collection', (req, res, next) => {
   res.header('Content-type', 'text/xml');
   res.send(xmlFile);
 });
+
+app.get('/', (req, res) => res.send('Working!!!'));
