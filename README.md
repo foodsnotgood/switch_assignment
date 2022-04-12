@@ -11,6 +11,7 @@ I decided to tackle it the following way:
 3. Building an API allows me to completely decouple the front end. That way I could build a small interface and to use on my personal website www.johannesroeder.be and host the API on Heroku (free version).
 
 The challenges I experienced so far:
--Since I am used to Java Spring it was interesting to learn how to determine routes in Node (which was much simpler then I expected). The greatest challenge to has been to work with the XML instead of JSON. Since it's really ease to use and manipulate JSON in Javascript I used an external package 'xml2json' to transform the data back and forth.
+-Since I am used to Java Spring it was interesting to learn how to determine routes in Node (which was much simpler then I expected). The greatest challenge to me has been to work with the XML instead of JSON. Since it's really ease to use and manipulate JSON in Javascript I used an external package 'xml2json' to transform the data back and forth.
 
--The next struggle was to deploy the api on heroku. I found a great little tutorial but I could seem to get it working. I kept getting errors and the app crashed while it was working completely fine locally. I finally found out that I needed to add 'process.env.PORT || 3000' to the listen method of the app so heroku can assign it's own port number. Boy was I happy XD
+-The next struggle was to deploy the api on heroku. I found a great little tutorial but I couldn't seem to get it working. I kept getting errors and the app crashed while it was working completely fine locally. I finally found out that I needed to add 'process.env.PORT || 3000' to the listen method of the app so heroku can assign it's own port number. Boy was I happy XD
+Now on to the fun part!
