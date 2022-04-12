@@ -31,7 +31,7 @@ app.options('*', cors());
 app.use(express.json());
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log('listening on port 3000');
+  console.log('listening on port 3000 locally');
 });
 
 const addRequestBodyToJSON = (data, request) => {
