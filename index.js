@@ -36,9 +36,18 @@ app.listen(process.env.PORT || 3000, () => {
 
 const addRequestBodyToJSON = (data, request) => {
   const json = data;
-  const camera = { ...request.body };
-  json.my_collection.cameras[0].camera.push(camera);
-  return json;
+  const newObj = { ...request.body };
+
+  return newObj['aperature']
+    ? json.my_collection.lenses[0].lens.push(newObj)
+    : json.my_collection.cameras[0].camera.push(newObj);
+
+  // if(newObj['aperature']){
+  //   json.my_collection.lenses[0].lens.push(newObj);
+  //   return json;
+  // }
+  // json.my_collection.cameras[0].camera.push(newObj);
+  // return json;
 };
 
 const json2xml = json => {
@@ -49,14 +58,28 @@ const json2xml = json => {
 
 app.post('/addcamera', (request, response, next) => {
   converter.parseString(xmlFile, (err, jsonData) => {
-    if (err) response.send(err);
+    if (err) response.json({ msg: err });
     const json = addRequestBodyToJSON(jsonData, request);
     const xml = json2xml(json);
     try {
       fs.writeFileSync('newxml.xml', xml);
-      response.send('Success');
+      response.json({ msg: 'success' });
     } catch (err) {
-      response.send(err);
+      response.json({ msg: err });
+    }
+  });
+});
+
+app.post('addlens', (request, response, next) => {
+  converter.parseString(xmlFile, (err, jsonData) => {
+    if (err) response.json({ msg: err });
+    const json = addRequestBodyToJSON(jsonData, request);
+    const xml = json2xml(json);
+    try {
+      fs.writeFileSync('newxml.xml', xml);
+      response.json({ msg: 'success' });
+    } catch (err) {
+      response.json({ msg: err });
     }
   });
 });
