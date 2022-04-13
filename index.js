@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const converter = require('xml2js');
-const xmlFile = fs.readFileSync('cameras.xml', 'utf-8');
 const cors = require('cors');
 
 app.use(
@@ -38,16 +37,12 @@ const addRequestBodyToJSON = (data, request) => {
   const json = data;
   const newObj = { ...request.body };
 
-  return newObj['aperature']
-    ? json.my_collection.lenses[0].lens.push(newObj)
-    : json.my_collection.cameras[0].camera.push(newObj);
-
-  // if(newObj['aperature']){
-  //   json.my_collection.lenses[0].lens.push(newObj);
-  //   return json;
-  // }
-  // json.my_collection.cameras[0].camera.push(newObj);
-  // return json;
+  if (newObj['aperature']) {
+    json.my_collection.lenses[0].lens.push(newObj);
+    return json;
+  }
+  json.my_collection.cameras[0].camera.push(newObj);
+  return json;
 };
 
 const json2xml = json => {
@@ -57,12 +52,13 @@ const json2xml = json => {
 };
 
 app.post('/addcamera', (request, response, next) => {
+  const xmlFile = fs.readFileSync('cameras.xml', 'utf-8');
   converter.parseString(xmlFile, (err, jsonData) => {
     if (err) response.json({ msg: err });
     const json = addRequestBodyToJSON(jsonData, request);
     const xml = json2xml(json);
     try {
-      fs.writeFileSync('newxml.xml', xml);
+      fs.writeFileSync('cameras.xml', xml);
       response.json({ msg: 'success' });
     } catch (err) {
       response.json({ msg: err });
@@ -70,13 +66,14 @@ app.post('/addcamera', (request, response, next) => {
   });
 });
 
-app.post('addlens', (request, response, next) => {
+app.post('/addlens', (request, response, next) => {
+  const xmlFile = fs.readFileSync('cameras.xml', 'utf-8');
   converter.parseString(xmlFile, (err, jsonData) => {
     if (err) response.json({ msg: err });
     const json = addRequestBodyToJSON(jsonData, request);
     const xml = json2xml(json);
     try {
-      fs.writeFileSync('newxml.xml', xml);
+      fs.writeFileSync('cameras.xml', xml);
       response.json({ msg: 'success' });
     } catch (err) {
       response.json({ msg: err });
@@ -85,6 +82,7 @@ app.post('addlens', (request, response, next) => {
 });
 
 app.get('/collection', (req, res, next) => {
+  const xmlFile = fs.readFileSync('cameras.xml', 'utf-8');
   res.header('Content-type', 'text/xml');
   res.send(xmlFile);
 });

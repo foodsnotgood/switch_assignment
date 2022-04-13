@@ -1,50 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <my_collection>
-    <cameras>
-        <camera>
-            <brand>Canon</brand>
-            <name>80D</name>
-            <sensor>APS-C</sensor>
-            <mp>24.2</mp>
-            <iso_min>100</iso_min>
-            <iso_max>25600</iso_max>
-            <shutter_min>1/8000</shutter_min>
-            <shutter_max>30</shutter_max>
-            <lens_mount>Canon EF-S</lens_mount>
-        </camera>
-        <camera>
-            <brand>Fujifilm</brand>
-            <name>XF10</name>
-            <sensor>APS-C</sensor>
-            <mp>24.2</mp>
-            <iso_min>200</iso_min>
-            <iso_max>25600</iso_max>
-            <shutter_min>1/16000</shutter_min>
-            <shutter_max>400</shutter_max>
-            <lens>
-                <focal_length>18.5</focal_length>
-                <aperature>1:2.8</aperature>
-            </lens>
-        </camera>
-    </cameras>
-    <lenses>
-        <lens>
-            <brand>Canon</brand>
-            <focal_length>85</focal_length>
-            <aperature>1:1.8</aperature>
-            <mount>Canon EF-S</mount>
-        </lens>
-        <lens>
-            <brand>Sigma</brand>
-            <focal_length>17-50</focal_length>
-            <aperature>1:2.8</aperature>
-            <mount>Canon EF-S</mount>
-        </lens>
-        <lens>
-            <brand>Helios</brand>
-            <focal_length>58</focal_length>
-            <aperature>1:2</aperature>
-            <mount>m42</mount>
-        </lens>
-    </lenses>
+  <cameras>
+    <camera>
+      <brand>Canon</brand>
+      <name>80D</name>
+      <sensor>APS-C</sensor>
+      <mp>24.2</mp>
+      <iso_min>100</iso_min>
+      <iso_max>25600</iso_max>
+      <shutter_min>1/8000</shutter_min>
+      <shutter_max>30</shutter_max>
+      <lens_mount>Canon EF-S</lens_mount>
+    </camera>
+    <camera>
+      <brand>Fujifilm</brand>
+      <name>XF10</name>
+      <sensor>APS-C</sensor>
+      <mp>24.2</mp>
+      <iso_min>200</iso_min>
+      <iso_max>25600</iso_max>
+      <shutter_min>1/16000</shutter_min>
+      <shutter_max>400</shutter_max>
+      <lens>
+        <focal_length>18.5</focal_length>
+        <aperature>1:2.8</aperature>
+      </lens>
+    </camera>
+    <camera>
+      <brand>nog een camera</brand>
+      <name>dhdhg</name>
+      <sensor>ggch</sensor>
+      <iso>asd</iso>
+      <shutter>asdasd</shutter>
+      <mount>asdsa</mount>
+    </camera>
+    <camera>
+      <brand>nog een camera</brand>
+      <name>dhdhg</name>
+      <sensor>ggch</sensor>
+      <iso>asd</iso>
+      <shutter>asdasd</shutter>
+      <mount>asdsa</mount>
+    </camera>
+  </cameras>
+  <lenses>
+    <lens>
+      <brand>Canon</brand>
+      <focal_length>85</focal_length>
+      <aperature>1:1.8</aperature>
+      <mount>Canon EF-S</mount>
+    </lens>
+    <lens>
+      <brand>Sigma</brand>
+      <focal_length>17-50</focal_length>
+      <aperature>1:2.8</aperature>
+      <mount>Canon EF-S</mount>
+    </lens>
+    <lens>
+      <brand>Helios</brand>
+      <focal_length>58</focal_length>
+      <aperature>1:2</aperature>
+      <mount>m42</mount>
+    </lens>
+    <lens>
+      <brand>bladibla</brand>
+      <focalLength>dfg</focalLength>
+      <aperature>cxz</aperature>
+      <mount>zxczxc</mount>
+    </lens>
+    <lens>
+      <brand>sososososos</brand>
+      <focalLength>dfg</focalLength>
+      <aperature>cxz</aperature>
+      <mount>zxczxc</mount>
+    </lens>
+  </lenses>
 </my_collection>
