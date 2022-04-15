@@ -6,41 +6,19 @@
       <name>80D</name>
       <sensor>APS-C</sensor>
       <mp>24.2</mp>
-      <iso_min>100</iso_min>
-      <iso_max>25600</iso_max>
-      <shutter_min>1/8000</shutter_min>
-      <shutter_max>30</shutter_max>
-      <lens_mount>Canon EF-S</lens_mount>
+      <iso>100-25600</iso>
+      <shutter>1/8000s-30s</shutter>
+      <mount>Canon EF-S</mount>
     </camera>
     <camera>
       <brand>Fujifilm</brand>
       <name>XF10</name>
       <sensor>APS-C</sensor>
       <mp>24.2</mp>
-      <iso_min>200</iso_min>
-      <iso_max>25600</iso_max>
-      <shutter_min>1/16000</shutter_min>
-      <shutter_max>400</shutter_max>
-      <lens>
-        <focal_length>18.5</focal_length>
-        <aperature>1:2.8</aperature>
-      </lens>
-    </camera>
-    <camera>
-      <brand>nog een camera</brand>
-      <name>dhdhg</name>
-      <sensor>ggch</sensor>
-      <iso>asd</iso>
-      <shutter>asdasd</shutter>
-      <mount>asdsa</mount>
-    </camera>
-    <camera>
-      <brand>nog een camera</brand>
-      <name>dhdhg</name>
-      <sensor>ggch</sensor>
-      <iso>asd</iso>
-      <shutter>asdasd</shutter>
-      <mount>asdsa</mount>
+      <iso>200-25600</iso>
+      <shutter>1/16000s-400s</shutter>
+      <focal_length>18.5</focal_length>
+      <aperature>1:2.8</aperature>
     </camera>
   </cameras>
   <lenses>
@@ -61,18 +39,6 @@
       <focal_length>58</focal_length>
       <aperature>1:2</aperature>
       <mount>m42</mount>
-    </lens>
-    <lens>
-      <brand>bladibla</brand>
-      <focalLength>dfg</focalLength>
-      <aperature>cxz</aperature>
-      <mount>zxczxc</mount>
-    </lens>
-    <lens>
-      <brand>sososososos</brand>
-      <focalLength>dfg</focalLength>
-      <aperature>cxz</aperature>
-      <mount>zxczxc</mount>
     </lens>
   </lenses>
 </my_collection>

@@ -59,7 +59,7 @@ app.post('/addcamera', (request, response, next) => {
     const xml = json2xml(json);
     try {
       fs.writeFileSync('cameras.xml', xml);
-      response.json({ msg: 'success' });
+      response.json({ msg: 'Success!!' });
     } catch (err) {
       response.json({ msg: err });
     }
@@ -74,7 +74,7 @@ app.post('/addlens', (request, response, next) => {
     const xml = json2xml(json);
     try {
       fs.writeFileSync('cameras.xml', xml);
-      response.json({ msg: 'success' });
+      response.json({ msg: 'Success!!' });
     } catch (err) {
       response.json({ msg: err });
     }
@@ -83,6 +83,12 @@ app.post('/addlens', (request, response, next) => {
 
 app.get('/collection', (req, res, next) => {
   const xmlFile = fs.readFileSync('cameras.xml', 'utf-8');
+  res.header('Content-type', 'text/xml');
+  res.send(xmlFile);
+});
+
+app.get('/collection/original', (req, res, next) => {
+  const xmlFile = fs.readFileSync('cameras_original.xml', 'utf-8');
   res.header('Content-type', 'text/xml');
   res.send(xmlFile);
 });
