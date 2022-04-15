@@ -93,4 +93,4 @@ app.get('/collection/original', (req, res, next) => {
   res.send(xmlFile);
 });
 
-app.get('/', (req, res) => res.send('Working!!!'));
+app.get('/', (req, res) => res.send('Working!'));
